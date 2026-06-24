@@ -22,7 +22,7 @@ export interface Pregunta {
   categoria?: string;
 }
 
-export const PREGUNTAS: Pregunta[] = [
+export const PREGUNTAS1: Pregunta[] = [
   // ── TEMA: Conductismo (Preguntas 1-6) ──────────────────────────────
   {
     id: 1,
@@ -520,7 +520,7 @@ export const PREGUNTAS: Pregunta[] = [
   },
 ];
 
-export const PREGUNTAS2: Pregunta[] = [
+export const PREGUNTAS: Pregunta[] = [
 
   {
     id: 1,
