@@ -45,6 +45,11 @@ const DashboardLayout = () => {
       name: "Serpientes y Escaleras",
       href: "/serpientes-escaleras",
       icon: User,
+    },
+    {
+      name: "Filosofia",
+      href: "/filosofia",
+      icon: User,
     }
   ];
 

@@ -10,6 +10,7 @@ import Oxidacion from "./pages/Oxidacion";
 import TablaPeriodica from "./pages/TablaPeriodica";
 import UnoQuimico from "./pages/UnoQuimica";
 import SerpientesEscaleras from "./components/SerpientesEscaleras";
+import JuegoValores from "./components/JuegoValores";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,8 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           {/* Página independiente */}
           <Route path="/uno-quimico" element={<UnoQuimico />} />
+          <Route path="/filosofia" element={<JuegoValores />} />
+
           <Route path="/serpientes-escaleras" element={<SerpientesEscaleras />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             {/* Redirige /dashboard a /dashboard/oxidacion */}
