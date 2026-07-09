@@ -13,6 +13,7 @@ import SerpientesEscaleras from "./components/SerpientesEscaleras";
 import JuegoValores from "./components/JuegoValores";
 import Barajas from "./components/barajas/barajas-de-valencias";
 import MemoramaQuimico from "./components/momoram/memorama_quimico";
+import Home from "./components/Home";
 
 const queryClient = new QueryClient();
 
@@ -23,18 +24,19 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          {/* 1. La ruta raíz ahora muestra tu nuevo Home */}
+          <Route path="/" element={<Home />} />
+
           <Route path="/login" element={<Login />} />
-          {/* Página independiente */}
+
+          {/* 2. Tus juegos independientes */}
           <Route path="/uno-quimico" element={<UnoQuimico />} />
           <Route path="/memoria" element={<MemoramaQuimico />} />
           <Route path="/barajas" element={<Barajas />} />
-
-
-
           <Route path="/serpientes-escaleras" element={<SerpientesEscaleras />} />
+
+          {/* 3. Tu Dashboard con sus sub-rutas */}
           <Route path="/dashboard" element={<DashboardLayout />}>
-            {/* Redirige /dashboard a /dashboard/oxidacion */}
             <Route index element={<Navigate to="oxidacion" replace />} />
             <Route path="oxidacion" element={<Oxidacion />} />
             <Route path="tabla-periodica" element={<TablaPeriodica />} />

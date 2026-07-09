@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Home, User, Settings, Menu, Moon, Sun } from "lucide-react";
+import { Home, User, Settings, Menu, Moon, Sun, Brain, Layers, Dices, FlaskConical } from "lucide-react";
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -25,28 +25,16 @@ const DashboardLayout = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  const navigation = [
-    {
-      name: "Memorama Quimico",
-      href: "/memoria",
-      icon: User,
-    },
-    {
-      name: "Barajas Valencias",
-      href: "/barajas",
-      icon: User,
-    },
-    ,
 
-    {
-      name: "Serpientes y Escaleras",
-      href: "/serpientes-escaleras",
-      icon: User,
-    },
+  const navigation = [
+    { name: "Memorama Químico", href: "/memoria", icon: Brain },
+    { name: "Barajas Valencias", href: "/barajas", icon: Layers },
+    { name: "Serpientes y Escaleras", href: "/serpientes-escaleras", icon: Dices },
     {
       name: "Oxidación",
       href: "/dashboard/oxidacion",
-      icon: User,
+      icon: FlaskConical,
+      badge: "Extra" // <--- Aquí agregamos la insignia
     }
     // ,
     // {
@@ -89,15 +77,24 @@ const DashboardLayout = () => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors",
+                  "flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md transition-colors",
                   {
                     "bg-primary text-primary-foreground": isActive,
                     "text-muted-foreground hover:bg-accent hover:text-accent-foreground": !isActive,
                   }
                 )}
               >
-                <item.icon className="mr-3 h-5 w-5" />
-                {item.name}
+                <div className="flex items-center">
+                  <item.icon className="mr-3 h-5 w-5" />
+                  {item.name}
+                </div>
+
+                {/* Renderizado condicional del Badge */}
+                {item.badge && (
+                  <span className="ml-2 px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-red-500 text-white">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             );
           })}
