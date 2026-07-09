@@ -11,6 +11,8 @@ import TablaPeriodica from "./pages/TablaPeriodica";
 import UnoQuimico from "./pages/UnoQuimica";
 import SerpientesEscaleras from "./components/SerpientesEscaleras";
 import JuegoValores from "./components/JuegoValores";
+import Barajas from "./components/barajas/barajas-de-valencias";
+import MemoramaQuimico from "./components/momoram/memorama_quimico";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +27,10 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           {/* Página independiente */}
           <Route path="/uno-quimico" element={<UnoQuimico />} />
-          <Route path="/filosofia" element={<JuegoValores />} />
+          <Route path="/memoria" element={<MemoramaQuimico />} />
+          <Route path="/barajas" element={<Barajas />} />
+
+
 
           <Route path="/serpientes-escaleras" element={<SerpientesEscaleras />} />
           <Route path="/dashboard" element={<DashboardLayout />}>

@@ -27,30 +27,39 @@ const DashboardLayout = () => {
 
   const navigation = [
     {
-      name: "Oxidación",
-      href: "/dashboard/oxidacion",
+      name: "Memorama Quimico",
+      href: "/memoria",
       icon: User,
     },
     {
-      name: "Tabla Periódica",
-      href: "/dashboard/tabla-periodica",
+      name: "Barajas Valencias",
+      href: "/barajas",
       icon: User,
     },
-    {
-      name: "UNO Químico",
-      href: "/uno-quimico",
-      icon: User,
-    },
+    ,
+
     {
       name: "Serpientes y Escaleras",
       href: "/serpientes-escaleras",
       icon: User,
     },
     {
-      name: "Filosofia",
-      href: "/filosofia",
+      name: "Oxidación",
+      href: "/dashboard/oxidacion",
       icon: User,
     }
+    // ,
+    // {
+    //   name: "Tabla Periódica",
+    //   href: "/dashboard/tabla-periodica",
+    //   icon: User,
+    // },
+    // {
+    //   name: "UNO Químico",
+    //   href: "/uno-quimico",
+    //   icon: User,
+    // },
+
   ];
 
   return (
